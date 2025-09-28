@@ -1,0 +1,132 @@
+/* ---------- Reset & variables ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --brand:#476d81;
+  --muted:#28809c;
+  --bg:#f8f9fa;
+  --card:#e0fbfc;
+  --text:#803d4f;
+  --max-width:1100px;
+}
+html { font-family: Inter, Arial, sans-serif; font-size:16px; color:var(--text); background:var(--bg); }
+
+/* ---------- Header & nav (desktop) ---------- */
+.site-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 32px;
+  background:var(--brand);
+  color:#981b1b;
+}
+.brand { display:flex; flex-direction:column; }
+.logo { font-size:1.25rem; line-height:1; }
+.tag { font-size:0.8rem; opacity:0.9; }
+
+.nav-menu { display:flex; gap:20px; list-style:none; align-items:center; }
+.nav-menu a { color:#734242; text-decoration:none; font-weight:600; padding:8px 6px; border-radius:4px; }
+.nav-menu a:hover { background:rgba(255,255,255,0.08); }
+
+.nav-toggle { display:none; /* shown on mobile */ background:none; border:none; color:#fff; font-size:1rem; cursor:pointer; }
+
+/* ---------- Hero ---------- */
+.hero{
+  padding:64px 16px;
+  text-align:center;
+  background:linear-gradient(180deg, rgba(144,224,239,0.3), rgba(144,224,239,0.15));
+}
+.hero h2{ font-size:clamp(1.5rem, 3.5vw, 2.25rem); margin-bottom:8px; }
+.hero p { font-size:1rem; color:#154; }
+
+/* ---------- Container layout (desktop) ---------- */
+.container{
+  max-width:var(--max-width);
+  margin:22px auto;
+  display:flex;
+  gap:20px;
+  padding:0 16px;
+  align-items:flex-start;
+}
+
+.sidebar{
+  flex:0 0 300px;
+  background:var(--muted);
+  padding:18px;
+  border-radius:8px;
+}
+.content{
+  flex:1 1 auto;
+  background:var(--card);
+  padding:18px;
+  border-radius:8px;
+}
+.content img{ max-width:100%; height:auto; display:block; border-radius:8px; margin:14px 0; }
+
+/* small cards grid */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:12px;
+}
+.card{ background:#fff; padding:12px; border-radius:8px; box-shadow:0 1px 2px rgba(0,0,0,0.06); }
+
+/* ---------- Footer ---------- */
+.site-footer{
+  text-align:center;
+  padding:16px;
+  margin-top:18px;
+  background:var(--brand);
+  color:#fff;
+}
+
+/* ---------- RESPONSIVE: target screens <= 768px ---------- */
+@media (max-width: 768px) {
+
+  /* overall font size slightly smaller on mobile */
+  html { font-size:15px; }
+
+  /* header: stack brand + show toggle */
+  .site-header{
+    gap:12px;
+    padding:12px 16px;
+  }
+  .nav-toggle { display:inline-block; }
+
+  /* hide the horizontal menu by default — will show on toggle */
+  .nav-menu {
+    display:none;
+    flex-direction:column;
+    gap:8px;
+    margin-top:10px;
+    background:var(--brand);
+    padding:10px;
+    border-radius:8px;
+  }
+  .nav-menu.open { display:flex; }
+
+  /* stack layout vertically */
+  .container {
+    display:block;
+    padding:0 12px;
+  }
+  .sidebar {
+    width:100%;
+    margin-bottom:12px;
+  }
+
+  /* content cards should be single column */
+  .cards {
+    grid-template-columns:1fr;
+  }
+
+  /* shrink hero */
+  .hero { padding:36px 12px; }
+  .hero h2 { font-size:1.25rem; }
+
+  /* avoid horizontal scroll: ensure images and containers don't overflow */
+  img, picture { max-width:100%; height:auto; display:block; }
+
+  /* optional: prevent accidental horizontal scrollers on some phones */
+  html, body { overflow-x: hidden; }
+}
