@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- IMPORTANT for responsive behavior -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Sample Site</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1 class="logo">MyWebsite</h1>
+      <p class="tag">Responsive demo</p>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">☰ Menu</button>
+      <ul id="navMenu" class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <h2>Convert desktop pages to mobile-friendly layouts</h2>
+      <p>Learn media queries, flexible layout and responsive images.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <aside class="sidebar" aria-labelledby="sidebar-title">
+      <h3 id="sidebar-title">Sidebar</h3>
+      <p>Useful links and quick info go here.</p>
+      <ul>
+        <li>Link A</li>
+        <li>Link B</li>
+        <li>Link C</li>
+      </ul>
+    </aside>
+
+    <section class="content" aria-labelledby="content-title">
+      <h3 id="content-title">Main content</h3>
+      <p>
+        This is the main content area. Images and text resize and reflow
+        with a media query at <code>max-width: 768px</code>.
+      </p>
+
+      <picture>
+        <source media="(max-width: 768px)" srcset="https://picsum.photos/id/1015/700/350" />
+        <img src="http://thewowstyle.com/wp-content/uploads/2015/01/Waterfall-in-Mount-Rainier-National-Park-by-Michael-Matti.jpg" alt="Sample scenic"
+
+      <div class="cards">
+
+        <article class="card"><h4>Card 1</h4><p>Short description</p></article>
+        <article class="card"><h4>Card 2</h4><p>Short description</p></article>
+        <article class="card"><h4>Card 3</h4><p>Short description</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 MyWebsite — Responsive demo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
